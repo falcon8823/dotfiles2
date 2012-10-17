@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/procon2012/Ryo-Lunch'
+let g:netrw_dirhist_2='/Users/procon2012/gitolite-admin'
+let g:netrw_dirhist_3='/Users/procon2012/procon2012/SorobanWeb/app/views/users'
+let g:netrw_dirhist_4='/Users/procon2012/procon2012/SorobanWeb/app/views'

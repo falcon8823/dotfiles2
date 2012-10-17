@@ -1,0 +1,25 @@
+"3.3 (created: 2011/11/13 17:32:12)
+" vim: set ft=vimperator:
+
+" ブラウザタイトルの変更
+set titlestring=Firefox
+" ページ全体で検索語を強調表示
+set hlsearch
+
+"yで選択範囲をコピー
+map y :echo 'Yank!'<CR>Y
+
+"j/kの移動量を5倍に
+map j <C-e>
+map k <C-y>
+"タブ移動
+nnoremap h <C-p>
+nnoremap l <C-n>
+
+" ^CでEsc
+map <C-c> <ESC>
+
+" リンクのURIをステータスラインに表示
+set showstatuslinks=1
+
+set editor='/Applications/MacVim.app/Contents/MacOS/mvim -f'
