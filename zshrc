@@ -188,18 +188,18 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 unsetopt complete_aliases
 
 # alias setting
-[ -f ~/dotfiles/zshrc.alias ] && source ~/dotfiles/zshrc.alias
+[ -f ~/dotfiles2/zshrc.alias ] && source ~/dotfiles2/zshrc.alias
 
 case "${OSTYPE}" in
 # Mac(Unix)
 darwin*)
 	# ここに設定
-	[ -f ~/dotfiles/zshrc.osx ] && source ~/dotfiles/zshrc.osx
+	[ -f ~/dotfiles2/zshrc.osx ] && source ~/dotfiles2/zshrc.osx
 	;;
 # Linux
 linux*)
 	# ここに設定
-	[ -f ~/dotfiles/zshrc.linux ] && source ~/dotfiles/zshrc.linux
+	[ -f ~/dotfiles2/zshrc.linux ] && source ~/dotfiles2/zshrc.linux
 	;;
 esac
 
