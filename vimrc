@@ -151,7 +151,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " ターミナルでマウスを使用できるようにする
-"set mouse=a
+set mouse=a
 "set guioptions+=a
 "set ttymouse=xterm2
 
