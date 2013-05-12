@@ -89,7 +89,7 @@ let g:BibtexFlavor='pbibtex'
 "let g:Tex_DefaultTargetFormat='dvi'
 let g:Tex_DefaultTargetFormat='pdf'
 " DVI
-let g:Tex_CompileRule_dvi='platex -kanji=sjis -synctex=1 -src-specials -interaction=nonstopmode $*'
+let g:Tex_CompileRule_dvi='platex -kanji=utf8 -synctex=1 -src-specials -interaction=nonstopmode $*'
 " Warningの無視
 let g:Tex_IgnoredWarnings =
 	\'Underfull'."\n".
@@ -157,3 +157,8 @@ set mouse=a
 
 "クリップボードを共有する
 "set clipboard=unnamed,autoselect
+
+" local固有の設定ファイルを読み込む
+if filereadable(expand('~/.vimrc.local'))
+  source ~/.vimrc.local
+endif

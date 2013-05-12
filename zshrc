@@ -165,7 +165,7 @@ setopt no_hup                # ログアウト時にバックグラウンドジ�
 setopt no_checkjobs          # ログアウト時にバックグラウンドジョブを確認しない
 setopt notify                # バックグラウンドジョブが終了したら(プロンプトの表示を待たずに)すぐに知らせる
 
-#setopt rm_star_wait         # rm * を実行する前に確認
+setopt rm_star_wait         # rm * を実行する前に確認
 #setopt rm_star_silent        # rm * を実行する前に確認しない
 #setopt no_clobber           # リダイレクトで上書きを禁止
 unsetopt no_clobber          # リダイレクトで上書きを許可
@@ -175,10 +175,10 @@ unsetopt no_clobber          # リダイレクトで上書きを許可
 #setopt single_line_zle      # デフォルトの複数行コマンドライン編集ではなく、１行編集モードになる
 
 # カーソル位置から前方削除(Ctrl-u)
-#bindkey '^U' backward-kill-line
+bindkey '^U' backward-kill-line
 
 # Ctrl-h で単語ごとに削除
-#bindkey "^h" backward-kill-word
+bindkey "^h" backward-kill-word
 # / を単語の一部とみなさない記号の環境変数から削除
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 

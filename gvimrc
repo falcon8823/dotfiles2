@@ -1,9 +1,6 @@
 " 行数
 set lines=35
 
-" 表示フォント
-set guifont=Ricty\ Discord\ Regular:h15
-
 " カラースキーム
 colorscheme torte
 
@@ -13,3 +10,7 @@ if has('multi_byte_ime')
   highlight CursorIM guifg=NONE guibg=Purple
 endif
 
+" local固有の設定ファイルを読み込む
+if filereadable(expand('~/.gvimrc.local'))
+  source ~/.gvimrc.local
+endif
