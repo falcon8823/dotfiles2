@@ -3,3 +3,5 @@
 	name = Hayato OKUMOTO
 [color]
 	ui = auto
+[push]
+	default = simple
