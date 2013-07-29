@@ -1,6 +1,48 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+filetype off
+
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim
+	call neobundle#rc(expand('~/.vim/bundle'))
+endif
+
+" Bundle """""""""""""""""
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'alpaca-tc/vim-endwise.git', {
+      \ 'autoload' : {
+      \   'insert' : 1,
+      \ }}
+NeoBundleLazy 'edsono/vim-matchit', { 'autoload' : {
+      \ 'filetypes': 'ruby',
+      \ 'mappings' : ['nx', '%'] }}
+
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'h1mesuke/unite-outline'
+NeoBundle 'tpope/vim-rails', { 'autoload' : {
+      \ 'filetypes' : ['haml', 'ruby', 'eruby'] }}
+NeoBundle 'basyura/unite-rails', {
+      \ 'depends' : 'Shougo/unite.vim',
+      \ 'autoload' : {
+      \   'unite_sources' : [
+      \     'rails/bundle', 'rails/bundled_gem', 'rails/config',
+      \     'rails/controller', 'rails/db', 'rails/destroy', 'rails/features',
+      \     'rails/gem', 'rails/gemfile', 'rails/generate', 'rails/git', 'rails/helper',
+      \     'rails/heroku', 'rails/initializer', 'rails/javascript', 'rails/lib', 'rails/log',
+      \     'rails/mailer', 'rails/model', 'rails/rake', 'rails/route', 'rails/schema', 'rails/spec',
+      \     'rails/stylesheet', 'rails/view'
+      \   ]
+      \ }}
+
+
+""""""""""""""""""""""""""
+
+filetype plugin on
+filetype indent on
+
+
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -18,7 +60,9 @@ set fileencodings=utf-8,shift-jis,euc-jp,latin1
 
 " タブ幅, 自動インデント幅
 set tabstop=2 shiftwidth=2 softtabstop=2
-set noexpandtab
+" タブをスペースに
+set expandtab
+set autoindent
 
 " カラースキーム
 "colorscheme torte
