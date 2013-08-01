@@ -65,7 +65,7 @@ set expandtab
 set autoindent
 
 " カラースキーム
-"colorscheme torte
+colorscheme darkblue
 
 " 行番号表示
 set number
@@ -108,7 +108,7 @@ autocmd FileType ruby :map <C-s> <ESC>:!ruby -cW %<CR>
 autocmd FileType ruby :map <C-e> <ESC>:!ruby %<CR>
 
 " 対の括弧の自動補完
-"imap { {}<++><LEFT><LEFT><LEFT><LEFT><LEFT>
+"imap { {}<LEFT><LEFT><LEFT><LEFT><LEFT>
 "imap [ []<++><LEFT><LEFT><LEFT><LEFT><LEFT>
 "imap ( ()<++><LEFT><LEFT><LEFT><LEFT><LEFT>
 "imap （ （）<++><LEFT><LEFT><LEFT><LEFT><LEFT>

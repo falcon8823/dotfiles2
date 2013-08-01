@@ -55,7 +55,7 @@ HISTSIZE=10000               # ヒストリに保存するコマンド数
 SAVEHIST=10000               # ヒストリファイルに保存するコマンド数
 setopt hist_ignore_all_dups  # 重複するコマンド行は古い方を削除
 setopt hist_ignore_dups      # 直前と同じコマンドラインはヒストリに追加しない
-unsetopt share_history         # コマンド履歴ファイルを共有する
+unsetopt share_history         # コマンド履歴ファイルを共有しない
 setopt append_history        # 履歴を追加 (毎回 .zsh_history を作るのではなく)
 setopt inc_append_history    # 履歴をインクリメンタルに追加
 setopt hist_no_store         # historyコマンドは履歴に登録しない
@@ -69,21 +69,9 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 
 # コマンド履歴の検索機能の設定
-# ^[  は「エスケープ」
-# viなら    Ctrl-v ESC
-# Emacsなら Ctrl-q ESC
-# viで編集する場合
-# 上2行は Ctrl-v を押下した後、希望のキーを押下
-# 下2行は「エスケープS」の後にキーの端末コードを入力
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
-#bindkey "OA" history-beginning-search-backward-end
-#bindkey "OB" history-beginning-search-forward-end
-#bindkey "[A" history-beginning-search-backward-end
-#bindkey "B" history-beginning-search-forward-end
-# 複数行コマンドの場合、上記の設定だと少々不都合
-# tcshの様にする場合は以下のようにする
 bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 
