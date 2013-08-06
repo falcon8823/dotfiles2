@@ -1,4 +1,5 @@
 *.swp
 *.bak
 vim/.netrwhist
+vim/bundle/.neobundle
 
