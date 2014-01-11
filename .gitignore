@@ -2,4 +2,4 @@
 *.bak
 vim/.netrwhist
 vim/bundle/.neobundle
-
+vim/bundle/*
