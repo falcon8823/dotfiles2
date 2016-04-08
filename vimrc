@@ -1,5 +1,6 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+syntax on
 
 filetype off
 
@@ -34,6 +35,15 @@ NeoBundle 'basyura/unite-rails', {
       \     'rails/stylesheet', 'rails/view'
       \   ]
       \ }}
+NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      \     'windows' : 'make -f make_mingw32.mak',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
+NeoBundle 'slim-template/vim-slim'
 
 
 """"""""""""""""""""""""""
@@ -65,7 +75,7 @@ set expandtab
 set autoindent
 
 " カラースキーム
-colorscheme darkblue
+colorscheme torte
 
 " 行番号表示
 set number
@@ -182,6 +192,8 @@ inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
+let g:neocomplcache_force_overwrite_completefunc=1
+
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
@@ -201,6 +213,17 @@ set mouse=a
 
 "クリップボードを共有する
 "set clipboard=unnamed,autoselect
+
+" 末尾の空白をハイライト
+highlight WhitespaceEOL cterm=underline ctermbg=red guibg=#FF0000
+au BufWinEnter * let w:m1 = matchadd("WhitespaceEOL", ' +$')
+au WinEnter * let w:m1 = matchadd("WhitespaceEOL", ' +$')
+
+augroup HighlightTrailingSpaces
+  autocmd!
+  autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
+  autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
+augroup END
 
 " local固有の設定ファイルを読み込む
 if filereadable(expand('~/.vimrc.local'))

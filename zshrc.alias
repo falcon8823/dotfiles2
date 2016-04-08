@@ -1,5 +1,5 @@
 # エイリアス
-alias ls='ls -FG --color'
+alias ls='ls -FG'
 alias h='history -E -32'
 alias ll='ls -lF'
 alias la='ls -aF'
