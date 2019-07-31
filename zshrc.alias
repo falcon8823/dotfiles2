@@ -25,3 +25,6 @@ alias bi='bundle install'
 alias be='bundle exec'
 alias sudo='sudo ' # こうするとsudoでもaliasが使える
 
+alias dcom='docker-compose'
+alias dmac='docker-machine'
+
