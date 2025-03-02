@@ -4,49 +4,6 @@ syntax on
 
 filetype off
 
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
-	call neobundle#rc(expand('~/.vim/bundle'))
-endif
-
-" Bundle """""""""""""""""
-NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'alpaca-tc/vim-endwise.git', {
-      \ 'autoload' : {
-      \   'insert' : 1,
-      \ }}
-NeoBundleLazy 'edsono/vim-matchit', { 'autoload' : {
-      \ 'filetypes': 'ruby',
-      \ 'mappings' : ['nx', '%'] }}
-
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'h1mesuke/unite-outline'
-NeoBundle 'tpope/vim-rails', { 'autoload' : {
-      \ 'filetypes' : ['haml', 'ruby', 'eruby'] }}
-NeoBundle 'basyura/unite-rails', {
-      \ 'depends' : 'Shougo/unite.vim',
-      \ 'autoload' : {
-      \   'unite_sources' : [
-      \     'rails/bundle', 'rails/bundled_gem', 'rails/config',
-      \     'rails/controller', 'rails/db', 'rails/destroy', 'rails/features',
-      \     'rails/gem', 'rails/gemfile', 'rails/generate', 'rails/git', 'rails/helper',
-      \     'rails/heroku', 'rails/initializer', 'rails/javascript', 'rails/lib', 'rails/log',
-      \     'rails/mailer', 'rails/model', 'rails/rake', 'rails/route', 'rails/schema', 'rails/spec',
-      \     'rails/stylesheet', 'rails/view'
-      \   ]
-      \ }}
-NeoBundle 'Shougo/vimproc', {
-      \ 'build' : {
-      \     'windows' : 'make -f make_mingw32.mak',
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \    },
-      \ }
-NeoBundle 'slim-template/vim-slim'
-
-
-""""""""""""""""""""""""""
 
 filetype plugin on
 filetype indent on
@@ -134,52 +91,6 @@ augroup END
 
 " java
 autocmd FileType java set dictionary=j2se142.dict
-
-" Vim LaTeX
-set shellslash
-set grepprg=grep\ -nH\ $*
-let g:tex_flavor='platex'
-let g:BibtexFlavor='pbibtex'
-"let g:Tex_DefaultTargetFormat='dvi'
-let g:Tex_DefaultTargetFormat='pdf'
-" DVI
-let g:Tex_CompileRule_dvi='platex -kanji=utf8 -synctex=1 -src-specials -interaction=nonstopmode $*'
-" Warningの無視
-let g:Tex_IgnoredWarnings =
-	\'Underfull'."\n".
-	\'Overfull'."\n".
-	\'specifier changed to'."\n".
-	\'You have requested'."\n".
-	\'Missing number, treated as zero.'."\n".
-	\'There were undefined references'."\n".
-	\'Citation %.%# undefined'."\n".
-	\"Font shape \`JT1/gt/m/it\' undefined"."\n".
-	\"Font shape \`JY1/gt/m/it\' undefined"."\n".
-	\"Font shape \`JT1/mc/m/it\' undefined"."\n".
-	\"Font shape \`JY1/mc/m/it\' undefined"."\n".
-	\'LaTeX Font Warning: Some font shapes were not available, defaults substituted.'."\n".
-	\'Reference'
-let g:Tex_IgnoreLevel = 13
-"let g:Tex_ViewRule_dvi='c:/w32tex/dviout/dviout.exe -1'
-" 変換順
-let g:Tex_FormatDependency_pdf='dvi,pdf'
-" PDF
-let g:Tex_CompileRule_pdf='dvipdfmx -V 5 $*.dvi'
-"let g:Tex_ViewRule_pdf='c:/program files (x86)/adobe/acrobat 9.0/acrobat/acrobat.exe'
-
-
-"""" 自動補完の設定(neocomplcache)
-" Use neocomplcache.
-let g:neocomplcache_enable_at_startup = 1
-" Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
-" Use camel case completion.
-let g:neocomplcache_enable_camel_case_completion = 1
-" Use underbar completion.
-let g:neocomplcache_enable_underbar_completion = 1
-" Set minimum syntax keyword length.
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
